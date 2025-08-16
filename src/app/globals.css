@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Removed scroll-behavior: smooth to avoid conflict with react-scroll */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #da020e; /* Thumb color (Man United red!) */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white; /* Darker red on hover */
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-mu-red: #da020e;
+  --color-mu-black: #0a0a0a;
+  --color-white: #ffffff;
+  --font-nunito: var(--font-nunito);
+  --font-outfit: var(--font-outfit);
+  --font-mono: ui-monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), sans-serif;
+  font-weight: 600;
+}
+
+/* Typography: Outfit for headings, Nunito for body */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+/* Ensure spans inside headings inherit heading font */
+
+h1 {
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+p,
+span,
+div,
+a {
+  font-family: var(--font-nunito), sans-serif;
+  font-weight: 400;
+}
+
+/* Special cases: buttons and badges should use Nunito */
+button,
+.badge {
+  font-family: var(--font-nunito), sans-serif;
+}
