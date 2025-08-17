@@ -54,7 +54,7 @@ const sendEmail = async (data, reset, setIsSubmitting, setShowSuccess) => {
 
 export default function Home() {
   const [showTyping, setShowTyping] = useState(true);
-  const [showmsg, setShowMsg] = useState(false);
+  const [showMsg, setShowMsg] = useState(false);
   const [showfinalmsg, setShowFinalMsg] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -176,66 +176,71 @@ export default function Home() {
               </Link>
             </motion.div>
             {/* Typing Animation */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showTyping ? 1 : 0 }}
-              transition={{
-                duration: showTyping ? 0.8 : 0.5,
-                delay: showTyping ? 1.2 : 0,
-              }}
-              className="mt-15 text-center"
-            >
-              <TypeAnimation
-                sequence={[
-                  1500, // Wait 1 second before starting
-                  "Coder..",
-                  2000,
-                  "Gamer..",
-                  2000,
-                  "Solver..",
-                  1500,
-                  () => {
-                    setShowTyping(false);
-                    setTimeout(() => {
-                      setShowMsg(true);
-                    }, 2000);
-                  },
-                ]}
-                wrapper="span"
-                speed={50}
-                className="text-2xl text-white"
-                repeat={0}
-              />
-            </motion.div>
-            <AnimatePresence>
-              {showmsg && (
-                <motion.p
-                  key="message"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1, delay: 0 }}
-                  onViewportLeave={() => {
-                    setShowMsg(false);
-                    setShowFinalMsg(true);
-                  }}
-                  className="mt-15 text-center text-white text-xl"
-                >
-                  Yup im still trying to figure out how to make this website
-                  look good.
-                </motion.p>
-              )}
-            </AnimatePresence>
-            {showfinalmsg && (
-              <motion.p
-                className="mt-15 text-center text-white text-xl"
-                onViewportLeave={() => {
-                  setShowFinalMsg(false);
-                }}
-              >
-                See I told you I was trying... Go back and see my actual work.
-              </motion.p>
-            )}
+            <div className="relative h-12 mt-16">
+              <AnimatePresence mode="wait">
+                {showTyping && (
+                  <motion.div
+                    key="typing"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 1 }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <TypeAnimation
+                      sequence={[
+                        1500,
+                        "Coder..",
+                        2000,
+                        "Gamer..",
+                        2000,
+                        "Solver..",
+                        1500,
+                        () => {
+                          // when typing finishes: fade out typing, then fade in msg
+                          setShowTyping(false);
+                          setShowMsg(true);
+                        },
+                      ]}
+                      wrapper="span"
+                      speed={50}
+                      className="text-2xl text-white"
+                      repeat={0}
+                    />
+                  </motion.div>
+                )}
+
+                {showMsg && (
+                  <motion.p
+                    key="message"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="absolute inset-0 flex items-center justify-center text-white text-xl"
+                    onViewportLeave={() => {
+                      setShowMsg(false);
+                      setShowFinalMsg(true);
+                    }}
+                  >
+                    Yup, I’m still trying to figure out how to make this website
+                    look good.
+                  </motion.p>
+                )}
+
+                {showfinalmsg && (
+                  <motion.p
+                    className=" text-center text-white text-xl"
+                    onViewportLeave={() => {
+                      setShowFinalMsg(false);
+                    }}
+                  >
+                    See I told you I was trying... Go back and see my actual
+                    work.
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </section>
 
