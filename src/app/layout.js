@@ -15,7 +15,24 @@ import "./globals.css";
 
 export const metadata = {
   title: "Divye's Portfolio",
-  description: "Software Developer",
+  description:
+    "MACS graduate passionate about full-stack development, AI, and problem-solving. Check out my projects!",
+  keywords:
+    "full stack developer, React, Next.js, Node.js, Python, JavaScript, MACS graduate",
+  openGraph: {
+    title: "Divye Pugaloke - Full Stack Developer",
+    description:
+      "MACS graduate passionate about full-stack development, AI, and problem-solving.",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Divye Pugaloke - Full Stack Developer",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
