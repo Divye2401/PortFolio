@@ -21,6 +21,7 @@ export const metadata = {
     "full stack developer, React, Next.js, Node.js, Python, JavaScript, MACS graduate",
   openGraph: {
     title: "Divye Pugaloke - Full Stack Developer",
+    url: "https://portfolio-git-main-divyes-projects-1e240bae.vercel.app/",
     description:
       "MACS graduate passionate about full-stack development, AI, and problem-solving.",
     type: "website",
