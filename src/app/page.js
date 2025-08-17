@@ -198,7 +198,7 @@ export default function Home() {
                     setShowTyping(false);
                     setTimeout(() => {
                       setShowMsg(true);
-                    }, 1000);
+                    }, 2000);
                   },
                 ]}
                 wrapper="span"
