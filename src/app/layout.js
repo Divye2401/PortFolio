@@ -27,7 +27,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/portfolioicon.png",
         width: 1200,
         height: 630,
         alt: "Divye Pugaloke - Full Stack Developer",
