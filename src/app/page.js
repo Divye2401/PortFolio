@@ -158,7 +158,7 @@ export default function Home() {
               className="flex gap-4 justify-center"
             >
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 download="Divye_Pugaloke_Resume.pdf"
                 className="bg-gradient-to-r from-mu-red to-red-700 hover:from-red-700 hover:to-mu-red text-white px-8 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-red-500/25 font-medium flex items-center gap-2 hover:scale-105 "
               >
