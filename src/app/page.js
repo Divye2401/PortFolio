@@ -230,6 +230,10 @@ export default function Home() {
 
                 {showfinalmsg && (
                   <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1, delay: 0.2 }}
                     className=" text-center text-white text-xl"
                     onViewportLeave={() => {
                       setShowFinalMsg(false);
@@ -436,7 +440,7 @@ export default function Home() {
               </span>
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-2">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10 px-2">
               {/* MarkIt Project */}
               <div className="bg-mu-black border-4 border-white rounded-2xl overflow-hidden hover:scale-110 hover:border-mu-red transition-all duration-300 shadow-lg hover:shadow-2xl">
                 <div
@@ -580,6 +584,60 @@ export default function Home() {
                     </a>
                     <a
                       href="https://github.com/Divye2401/Frame-Analysis-using-NDNET"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Murder Mystery Project */}
+              <div className="bg-mu-black border-4 border-white rounded-2xl overflow-hidden hover:scale-110 hover:border-mu-red transition-all duration-300 shadow-lg hover:shadow-2xl">
+                <div
+                  className="h-56 bg-cover bg-center bg-no-repeat rounded-2xl"
+                  style={{ backgroundImage: "url(/murdermystery.png)" }}
+                />
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-mu-red">
+                    Murder Mystery
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">
+                    Immersive detective game powered by multi-agent AI system
+                    with dynamic character interactions, real-time clue
+                    discovery, and AI-generated visual content
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex items-center gap-1 bg-black/30 border border-white/30 text-white px-3 py-1 rounded-full text-sm">
+                      <SiNextdotjs className="text-xs" />
+                      <span>Next.js</span>
+                    </div>
+                    <div className="flex items-center gap-1 bg-blue-600/20 border border-blue-600/30 text-blue-600 px-3 py-1 rounded-full text-sm">
+                      <SiPython className="text-xs" />
+                      <span>FastAPI</span>
+                    </div>
+                    <div className="flex items-center gap-1 bg-purple-600/20 border border-purple-600/30 text-purple-600 px-3 py-1 rounded-full text-sm">
+                      <SiReact className="text-xs" />
+                      <span>CrewAI</span>
+                    </div>
+                    <div className="flex items-center gap-1 bg-green-500/20 border border-green-500/30 text-green-500 px-3 py-1 rounded-full text-sm">
+                      <SiMongodb className="text-xs" />
+                      <span>Supabase</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <a
+                      href="https://murdermystery-seven.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-mu-red hover:underline"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href="https://github.com/Divye2401/murdermystery"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-300 hover:text-white"
